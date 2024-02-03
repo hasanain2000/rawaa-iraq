@@ -1227,7 +1227,40 @@ https://templatemo.com/tm-574-mexant
       }
     };
     var swiper = new Swiper(".swiper-container", swiperOptions);
+
+</script>
+  <!-- Contact Us Button -->
+  <a id="contactButton" href="contact-us.html" style="cursor:pointer;position:fixed;bottom:20px;right:20px;padding:4px;background-color:#1feb00;border-radius:50%;width:50px;height:50px;display:block;text-align:center;text-decoration:none;z-index:9999;font-weight:bold;color:white;" class="bg-success">
+    <span style="display: table; width: 100%; height: 100%;">
+      <span style="display: table-cell; vertical-align: middle;">اتصل بنا</span>
+    </span>
+  </a>
+  <!-- About Us Button -->
+  <a id="aboutButton" href="about-us.html" style="cursor:pointer;position:fixed;bottom:20px;right:85px;padding:4px;background-color:#eb0000;border-radius:50%;width:50px;height:50px;display:block;text-align:center;text-decoration:none;z-index:9999;font-weight:bold;color:white;" class="bg-danger">
+    <span style="display: table; width: 100%; height: 100%;">
+      <span style="display: table-cell; vertical-align: middle;" class="">من نحن</span>
+    </span>
+  </a>
+  <script>
+    // Function to check if the device is a mobile device
+    function isMobileDevice() {
+      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+    // Function to show or hide buttons based on screen width
+    function showOrHideButtons() {
+      var screenWidth = window.innerWidth;
+      var contactButton = document.getElementById("contactButton");
+      var aboutButton = document.getElementById("aboutButton");
+      if (isMobileDevice() && screenWidth <= 768) {
+        contactButton.style.display = "block";
+        aboutButton.style.display = "block";
+      } else {
+        contactButton.style.display = "none";
+        aboutButton.style.display = "none";
+      }
+    }
+    // Call the function when the page loads and when it resizes
+    window.onload = showOrHideButtons;
+    window.onresize = showOrHideButtons;
   </script>
-<a href="contact-us.html" style="cursor:pointer;position:fixed;bottom:20px;right:20px;padding:4px;background-color:#1feb00;border-radius:50%;width:50px;height:50px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white;text-decoration:none;z-index:9999;font-weight:bold;" class="text-center bg-success">اتصل بنا</a>
-<a href="about-us.html" style="cursor:pointer;position:fixed;bottom:20px;right:85px;padding:4px;background-color:#eb0000;border-radius:50%;width:50px;height:50px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white;text-decoration:none;z-index:9999;font-weight:bold;" class="text-center bg-danger text-white">من نحن</a>
 </html>
